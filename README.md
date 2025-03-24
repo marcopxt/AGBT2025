@@ -1,4 +1,4 @@
-Ouput from the analyses for AGBT 2025 of the abstract "Enhancing breeding efficiency: assessing the impact of SimpleMating algorithm for long-term genetic gain and diversity".
+Ouput from the analyses for AGBT 2025 of the abstract **"Enhancing breeding efficiency: assessing the impact of SimpleMating algorithm for long-term genetic gain and diversity"**.
 
 
 
