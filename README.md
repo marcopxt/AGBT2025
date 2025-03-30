@@ -24,20 +24,39 @@ The second step was to implement the different scenarios for comparision. They w
 
 **GS**: A breeding program were the 40 crosses from each heterotic pools were randomly assigned after a selection of top indivduals (truncated genomic selection followed by randomly generation of a mating plan). 
 
+**MPV**: Mid-parental value scenario. The individuals candidates to crosses were coming from the double haploid population and all possible combinations were estimated for each heterotic group. For such, we used SimpleMating (Peixoto et al. 2024) to predict the mid-parental values (UC) of each cross, as follows
 
-**OCS**: Optimum cross-selection scenario. The individuals candidates to crosses were coming from the double haploid population and all possible combinations were estimated for each heterotic group. For such, we used SimpleMating (Peixoto et al. 2024) to predict usefulness of each cross, as follows:
 
-### Usefulness Criterion (UC)
-The usefulness criterion evaluates the expected genetic gain from a cross:
-
-**UC = μ + k ⋅ σ_A**
+$$
+MPV = (GEBV_p1 + GEBV_p2)/2
+$$
 
 where:  
-- **μ** is the mean genetic value of the progeny.  
-- **σ_A** is the additive genetic standard deviation of the progeny.  
-- **k** is a weighting factor.  
+- GEBV is the genomic value predicted for each parent.  
 
-### Genomic Estimated Breeding Value (GEBV)-Based Usefulness
+The optimization of this scenario was made using the SimpleMating algorithm and a restriction on inbreeding was made by setting it to 0 and the maximum numer of contributions was set 3. Then, a mating plan was generated for each heterotic group.
+
+
+**OCS**: Optimum cross-selection scenario. The individuals candidates to crosses were coming from the double haploid population and all possible combinations were estimated for each heterotic group. For such, we used SimpleMating (Peixoto et al. 2024) to predict Usefulness Criterion (UC) of each cross, as follows
+
+**UC = μ + ihσ**
+
+where:  
+- **μ** is the mid-parental value of of the progeny.  
+- **σ** is the additive genetic standard deviation of the progeny.  
+- **i** is the selection intensity.  
+
+The optimization of this scenario was made using the SimpleMating algorithm and a restriction on inbreeding was made by setting it to 0 and the maximum numer of contributions was set 3. Then, a mating plan was generated for each heterotic group.
+
+
+
+
+
+###
+
+2. Clonal breeding program
+
+3. ### Genomic Estimated Breeding Value (GEBV)-Based Usefulness
 Using genomic selection:  
 
 **UC = GEBV + k ⋅ SD(GEBV)**  
@@ -57,9 +76,3 @@ where:
 
 
 
-
-
-
-###
-
-2. Clonal breeding program
