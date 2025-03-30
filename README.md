@@ -83,12 +83,12 @@ $$
 
 
 where:
-- $a_i$ = Additive effect at locus \( i \).  
-- \( d_i \) = Dominance effect at locus \( i \).  
-- \( p_i \) = Frequency of the first allele at locus \( i \).  
-- \( q_i \) = Frequency of the second allele at locus \( i \) (\( q_i = 1 - p_i \)).  
-- \( y_i \) = Indicator variable representing genotypic deviations.  
-- \( n \) = Total number of loci.  
+- $a_i$ = Additive effect at locus *i*.  
+- $d_i$ = Dominance effect at locus *i*.  
+- $p_i$ = Frequency of the first allele at locus *i*.  
+- $q_i$ = Frequency of the second allele at locus *i* ($q_i = 1 - p_i$).  
+- $y_i$ = Indicator variable representing genotypic deviations.  
+- $n$ = Total number of loci.  
 
 The optimization of this scenario was made using the SimpleMating algorithm and a restriction on inbreeding was made by setting it to 0 and the maximum numer of contributions was set 3. Then, a mating plan was generated.
 
