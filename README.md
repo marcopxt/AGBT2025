@@ -9,8 +9,7 @@ link1
 
 
 
-###
-**Case 1**
+### **Case 1**
 
 The first set of simulations focused on a breeding program with two heterotic groups. The idea is two mimic a maize breeding breeeding program, with development of lines through doubled haploid production and the development of comercial hybrids created with combinations from the two heterotic groups. The simulations were conducted using AlphaSimR (Gaynor et al. 2021), as follows:
 
@@ -31,9 +30,7 @@ The second step was to implement the different scenarios for comparision. They w
 ### Usefulness Criterion (UC)
 The usefulness criterion evaluates the expected genetic gain from a cross. It is given by:
 
-\[
 UC = \mu + k \cdot \sigma_A
-\]
 
 where:
 - \( \mu \) is the mean genetic value of the progeny.
