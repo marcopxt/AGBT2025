@@ -1,12 +1,17 @@
-# **"Enhancing breeding efficiency: assessing the impact of SimpleMating algorithm for long-term genetic gain and diversity"**.
+# Enhancing breeding efficiency: assessing the impact of SimpleMating algorithm for long-term genetic gain and diversity.
 
-Authors: Marco Antonio Peixoto, Felipe Ferrão, Marcio Resende Jr.
+Marco Antonio Peixoto, Felipe Ferrão, Marcio Resende Jr.
+
+#######
 
 
-Ouput from the analyses for AGBT 2025 of the abstract.
+Details on the simulations for the abstract with the title before mentioned presented at the AGBT 2025.
 
- The simulations were conducted using AlphaSimR (Gaynor et al. 2021). The mate allocation and restrictions to build mating plans in the scenarios was made using SimpleMating package (Peixoto et al. 2024) [link](https://github.com/Resende-Lab/SimpleMating)
 
+##### Introduction
+The simulations were conducted using AlphaSimR (Gaynor et al. 2021). The mate allocation and restrictions to build mating plans in the scenarios was made using SimpleMating package (Peixoto et al. 2024) [link](https://github.com/Resende-Lab/SimpleMating)
+
+##### Material and Methods
 
 ### **Case 1**
 
