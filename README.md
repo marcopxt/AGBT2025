@@ -1,6 +1,6 @@
 # Enhancing breeding efficiency: assessing the impact of SimpleMating algorithm for long-term genetic gain and diversity.
 
-Marco Antonio Peixoto, Felipe Ferrão, Marcio Resende Jr.
+**Marco Antonio Peixoto, Felipe Ferrão, Marcio Resende Jr.**
 
 ***
 
@@ -8,12 +8,14 @@ Marco Antonio Peixoto, Felipe Ferrão, Marcio Resende Jr.
 Details on the simulations for the abstract with the title before mentioned presented at the AGBT 2025.
 
 
-##### Introduction
+### Introduction
 The simulations were conducted using AlphaSimR (Gaynor et al. 2021). The mate allocation and restrictions to build mating plans in the scenarios was made using SimpleMating package (Peixoto et al. 2024) [link](https://github.com/Resende-Lab/SimpleMating)
 
-##### Material and Methods
+<br>
 
-### **Case 1**
+### Material and Methods
+
+##### **Case 1**
 
 The first set of simulations focused on a breeding program with two heterotic groups. The idea is two mimic a maize breeding breeeding program, with development of lines through doubled haploid production and the development of comercial hybrids created with combinations from the two heterotic groups. The simulations for this case follow:
 
@@ -58,7 +60,7 @@ The optimization of this scenario was made using the SimpleMating algorithm and 
 **OpCS**: Optimal contribution selection. In this scenario, individuals candidates to crosses were coming from the first clonal phase and contributions were imposed for generating a crossing plan. The restriction were made in both, maximizing the genetic gain and restricting inbreeding (40% angle) using AlphaMate software (Gorjanc et al. 2028). A total of 40 crosses were also generated at the begging of each cycle for each heterotic group. The optimization was performed in the EBV values.
 
 
-### Set two
+##### Set two
 
 The second set of simulations focused on a clonal breeding program. After recombination through crosses, the best individuals will be selected and that clone will be assessed through the pipeline. The simulations setting were:
 
@@ -108,7 +110,12 @@ The optimization of this scenario was made using the SimpleMating algorithm and 
 **OpCS**: Optimal contribution selection. In this scenario, individuals candidates to crosses were coming from the first clonal phase and contributions were imposed for generating a crossing plan. The restriction were made in both, maximizing the genetic gain and restricting inbreeding (40% angle) using AlphaMate software (Gorjanc et al. 2028). A total of 80 crosses were also generated at the begging of each cycle.
 
 
-####
+### Results
+
+
+
+***
+
 
 
 
