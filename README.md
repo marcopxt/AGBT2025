@@ -28,38 +28,32 @@ The second step was to implement the different scenarios for comparision. They w
 **OCS**: Optimum cross-selection scenario. The individuals candidates to crosses were coming from the double haploid population and all possible combinations were estimated for each heterotic group. For such, we used SimpleMating (Peixoto et al. 2024) to predict usefulness of each cross, as follows:
 
 ### Usefulness Criterion (UC)
-The usefulness criterion evaluates the expected genetic gain from a cross. It is given by:
+The usefulness criterion evaluates the expected genetic gain from a cross:
 
-UC = \mu + k \cdot \sigma_A
+**UC = μ + k ⋅ σ_A**
 
-where:
-- \( \mu \) is the mean genetic value of the progeny.
-- \( \sigma_A \) is the additive genetic standard deviation of the progeny.
-- \( k \) is a weighting factor.
+where:  
+- **μ** is the mean genetic value of the progeny.  
+- **σ_A** is the additive genetic standard deviation of the progeny.  
+- **k** is a weighting factor.  
 
 ### Genomic Estimated Breeding Value (GEBV)-Based Usefulness
-An alternative approach using genomic selection:
+Using genomic selection:  
 
-\[
-UC = GEBV + k \cdot \text{SD}(GEBV)
-\]
+**UC = GEBV + k ⋅ SD(GEBV)**  
 
-where:
-- \( GEBV \) is the average genomic estimated breeding value of the progeny.
-- \( \text{SD}(GEBV) \) is the standard deviation of the progeny’s GEBVs.
+where:  
+- **GEBV** is the average genomic estimated breeding value of the progeny.  
+- **SD(GEBV)** is the standard deviation of the progeny’s GEBVs.  
 
 ### Usefulness with Dominance and Epistasis
 For cases where dominance and epistatic effects are considered:
 
-\[
-UC = \mu + k_1 \cdot \sigma_A + k_2 \cdot \sigma_D + k_3 \cdot \sigma_I
-\]
+**UC = μ + k₁ ⋅ σ_A + k₂ ⋅ σ_D + k₃ ⋅ σ_I**
 
-where:
-- \( \sigma_D \) and \( \sigma_I \) are dominance and epistatic standard deviations.
-- \( k_1, k_2, k_3 \) are weighting factors.
-
-
+where:  
+- **σ_D** and **σ_I** are dominance and epistatic standard deviations.  
+- **k₁, k₂, k₃** are weighting factors.  
 
 
 
