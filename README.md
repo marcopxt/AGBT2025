@@ -83,7 +83,7 @@ $$
 
 
 where:
-- \( a_i \) = Additive effect at locus \( i \).  
+- $a_i$ = Additive effect at locus \( i \).  
 - \( d_i \) = Dominance effect at locus \( i \).  
 - \( p_i \) = Frequency of the first allele at locus \( i \).  
 - \( q_i \) = Frequency of the second allele at locus \( i \) (\( q_i = 1 - p_i \)).  
