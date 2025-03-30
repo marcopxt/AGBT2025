@@ -113,6 +113,7 @@ The optimization of this scenario was made using the SimpleMating algorithm and 
 ### Results
 
 
+![Optim](../assets/images/Mate_Allocation.png){:width="40%" align="right"}
 
 ***
 
