@@ -68,21 +68,25 @@ Then, the scenarios below were implementedv for comparision. They were:
 
 
 $$
-MF1 = \sum_{i=1}^{n} \left[ a_i \left( p_i - q_i - y_i \right) + d_i \left( 2 p_i q_i + y_i \left( p_i - q_i \right) \right) \right]
+GPCP = \sum_{i=1}^{n} \left[ a_i \left( p_i - q_i - y_i \right) + d_i \left( 2 p_i q_i + y_i \left( p_i - q_i \right) \right) \right]
 $$
 
 
+where:
+- \( a_i \) = Additive effect at locus \( i \).  
+- \( d_i \) = Dominance effect at locus \( i \).  
+- \( p_i \) = Frequency of the first allele at locus \( i \).  
+- \( q_i \) = Frequency of the second allele at locus \( i \) (\( q_i = 1 - p_i \)).  
+- \( y_i \) = Indicator variable representing genotypic deviations.  
+- \( n \) = Total number of loci.  
 
-where:  
-- GEBV is the genomic value predicted for each parent envolved in a cross (parent 1 and parent 2 - p1 and p2)  
-
-The optimization of this scenario was made using the SimpleMating algorithm and a restriction on inbreeding was made by setting it to 0 and the maximum numer of contributions was set 3. Then, a mating plan was generated for each heterotic group.
+The optimization of this scenario was made using the SimpleMating algorithm and a restriction on inbreeding was made by setting it to 0 and the maximum numer of contributions was set 3. Then, a mating plan was generated.
 
 
-**OCS**: Optimum cross-selection scenario. The individuals candidates to crosses were coming from the double haploid population and all possible combinations were estimated for each heterotic group. For such, we used SimpleMating (Peixoto et al. 2024) to predict Usefulness Criterion (UC) of each cross, as follows
+**OCS**: The individuals candidates to crosses were coming from the first clonal phase and all possible combinations were estimated. We used SimpleMating (Peixoto et al. 2024) to predict genomic prediction of cross-performance of each cross (as above described), as follows:
 
 $$
-**UC = μ + ihσ**
+**UC = GPCP + ihσ**
 $$
 
 where:  
