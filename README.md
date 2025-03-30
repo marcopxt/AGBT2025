@@ -1,9 +1,9 @@
-Ouput from the analyses for AGBT 2025 of the abstract **"Enhancing breeding efficiency: assessing the impact of SimpleMating algorithm for long-term genetic gain and diversity"**.
+ **"Enhancing breeding efficiency: assessing the impact of SimpleMating algorithm for long-term genetic gain and diversity"**.
 
 Authors: Marco Antonio Peixoto, Felipe Ferrão, Marcio Resende Jr.
 
 
-
+Ouput from the analyses for AGBT 2025 of the abstract.
 
 link1
 
@@ -16,13 +16,53 @@ The first set of simulations focused on a breeding program with two heterotic gr
 
 i. Base genome. The base genome was created following the maize settings in the *species* argument. A total of 300 QTLs per chromosome was simulated. 
 ii. Trait.  A trait with 0.5 of heritability was simulated. Additive and domiance effects were assigned to the trait (being varDD and ddMean 0.2 and 0.92, respectively). 
-iii. A breeding program was then simulated and a 15 years of burn-in was simulated. From here, all scenarios took place.
+iii. A breeding program was then simulated and a 15 years of burn-in was simulated. From here, all scenarios took place. 
+iv. Genomic model. For the genomic model, the last three year of data (genotypes and phenotypes) were used to calibrate a model and the deploymet was used to select the best individuals and to create the mating plan in some scenarios (more details below). The BGLR package (Paulino and de los Campos (2021)) was used to fit a GBLUP (for predictig individuals) and an BayesB (for estimating marker effects), depending on each phase of the breeding program and scenarios were being used.
 
 For more details on the simulation parameters, please, see Peixoto et al. (2024).
 
 The second step was to implement the different scenarios for comparision. They were:
 
-**GS**: A breeding program with 
+**GS**: A breeding program were the 40 crosses from each heterotic pools were randomly assigned after a selection of top indivduals (truncated genomic selection followed by randomly generation of a mating plan). 
+
+
+**OCS**: Optimum cross-selection scenario. The individuals candidates to crosses were coming from the double haploid population and all possible combinations were estimated for each heterotic group. For such, we used SimpleMating (Peixoto et al. 2024) to predict usefulness of each cross, as follows:
+
+### Usefulness Criterion (UC)
+The usefulness criterion evaluates the expected genetic gain from a cross. It is given by:
+
+\[
+UC = \mu + k \cdot \sigma_A
+\]
+
+where:
+- \( \mu \) is the mean genetic value of the progeny.
+- \( \sigma_A \) is the additive genetic standard deviation of the progeny.
+- \( k \) is a weighting factor.
+
+### Genomic Estimated Breeding Value (GEBV)-Based Usefulness
+An alternative approach using genomic selection:
+
+\[
+UC = GEBV + k \cdot \text{SD}(GEBV)
+\]
+
+where:
+- \( GEBV \) is the average genomic estimated breeding value of the progeny.
+- \( \text{SD}(GEBV) \) is the standard deviation of the progeny’s GEBVs.
+
+### Usefulness with Dominance and Epistasis
+For cases where dominance and epistatic effects are considered:
+
+\[
+UC = \mu + k_1 \cdot \sigma_A + k_2 \cdot \sigma_D + k_3 \cdot \sigma_I
+\]
+
+where:
+- \( \sigma_D \) and \( \sigma_I \) are dominance and epistatic standard deviations.
+- \( k_1, k_2, k_3 \) are weighting factors.
+
+
 
 
 
