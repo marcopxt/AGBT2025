@@ -5,7 +5,7 @@ Authors: Marco Antonio Peixoto, Felipe Ferrão, Marcio Resende Jr.
 
 Ouput from the analyses for AGBT 2025 of the abstract.
 
- The simulations were conducted using AlphaSimR (Gaynor et al. 2021), as follows:
+ The simulations were conducted using AlphaSimR (Gaynor et al. 2021). The mate allocation and restrictions to build mating plans in the scenarios was made using SimpleMating package (Peixoto et al. 2024) [link](https://github.com/Resende-Lab/SimpleMating)
 
 
 ### **Case 1**
@@ -50,7 +50,10 @@ where:
 
 The optimization of this scenario was made using the SimpleMating algorithm and a restriction on inbreeding was made by setting it to 0 and the maximum numer of contributions was set 3. Then, a mating plan was generated for each heterotic group.
 
-### Case 2
+**OpCS**: Optimal contribution selection. In this scenario, individuals candidates to crosses were coming from the first clonal phase and contributions were imposed for generating a crossing plan. The restriction were made in both, maximizing the genetic gain and restricting inbreeding (40% angle) using AlphaMate software (Gorjanc et al. 2028). A total of 40 crosses were also generated at the begging of each cycle for each heterotic group. The optimization was performed in the EBV values.
+
+
+### Set two
 
 The second set of simulations focused on a clonal breeding program. After recombination through crosses, the best individuals will be selected and that clone will be assessed through the pipeline. The simulations setting were:
 
@@ -59,7 +62,7 @@ ii. Trait.  A trait with 0.5 of heritability was simulated. Additive and domianc
 iii. A clonal breeding program was then simulated and a 15 years of burn-in was used to generate a commom starting point for all scenarios. From here, all scenarios took place. 
 iv. Genomic model. For the genomic model, the last four year of data (genotypes and phenotypes) were used to calibrate a model and the deploymet was used to select the best individuals and to create the mating plan in some scenarios (more details below). The BGLR package (Perez and de los Campos (2021)) was used to fit a GBLUP (for predictig individuals) and an BayesB (for estimating marker effects), depending on each phase of the breeding program and scenarios were being used.
 
-Then, the scenarios below were implementedv for comparision. They were:
+Then, the scenarios below were implemented for comparision. They were:
 
 **GS**: A breeding program were the 80 crosses randomly assigned after a selection of top indivduals (truncated genomic selection followed by randomly generation of a mating plan). The genomic model here used targeted only additive effects.
 
@@ -90,34 +93,22 @@ $$
 $$
 
 where:  
-- **μ** is the mid-parental value of of the progeny.  
-- **σ** is the additive genetic standard deviation of the progeny.
+- **GPCP** is the genomic prediction of cross-performance of of the progeny.  
+- **σ** is the total genetic standard deviation of the progeny, which combines the addivite and dominance standard deviation.
 - **h** is the squared root of heritability.
 - **i** is the selection intensity.  
 
 The optimization of this scenario was made using the SimpleMating algorithm and a restriction on inbreeding was made by setting it to 0 and the maximum numer of contributions was set 3. Then, a mating plan was generated for each heterotic group.
 
+**OpCS**: Optimal contribution selection. In this scenario, individuals candidates to crosses were coming from the first clonal phase and contributions were imposed for generating a crossing plan. The restriction were made in both, maximizing the genetic gain and restricting inbreeding (40% angle) using AlphaMate software (Gorjanc et al. 2028). A total of 80 crosses were also generated at the begging of each cycle.
 
 
-2. Clonal breeding program
+####
 
-3. ### Genomic Estimated Breeding Value (GEBV)-Based Usefulness
-Using genomic selection:  
 
-**UC = GEBV + k ⋅ SD(GEBV)**  
 
-where:  
-- **GEBV** is the average genomic estimated breeding value of the progeny.  
-- **SD(GEBV)** is the standard deviation of the progeny’s GEBVs.  
 
-### Usefulness with Dominance and Epistasis
-For cases where dominance and epistatic effects are considered:
 
-**UC = μ + k₁ ⋅ σ_A + k₂ ⋅ σ_D + k₃ ⋅ σ_I**
-
-where:  
-- **σ_D** and **σ_I** are dominance and epistatic standard deviations.  
-- **k₁, k₂, k₃** are weighting factors.  
 
 
 
