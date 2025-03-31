@@ -5,7 +5,7 @@
 ***
 
 
-Details on the simulations for the abstract with the title before mentioned presented at the AGBT 2025.
+Details on the simulations for the abstract presented at the AGBT 2025.
 
 
 ### Introduction
@@ -15,14 +15,14 @@ The simulations were conducted using AlphaSimR (Gaynor et al. 2021). The mate al
 
 ### Material and Methods
 
-##### **Case 1**
+##### **Set one**
 
-The first set of simulations focused on a breeding program with two heterotic groups. The idea is two mimic a maize breeding breeeding program, with development of lines through doubled haploid production and the development of comercial hybrids created with combinations from the two heterotic groups. The simulations for this case follow:
+The first set of simulations focused on a breeding program with two heterotic groups. We mimic a maize breeding breeeding program, with development of lines through doubled haploid production and the development of comercial hybrids created with combinations among the two heterotic groups. The simulations for this case follow:
 
 i. Base genome. The base genome was created following the maize settings in the *species* argument. A total of 300 QTLs per chromosome was simulated. 
 ii. Trait.  A trait with 0.5 of heritability was simulated. Additive and domiance effects were assigned to the trait (being varDD and ddMean 0.2 and 0.92, respectively). 
 iii. A breeding program was then simulated and a 15 years of burn-in was simulated. From here, all scenarios took place. 
-iv. Genomic model. For the genomic model, the last three year of data (genotypes and phenotypes) were used to calibrate a model and the deploymet was used to select the best individuals and to create the mating plan in some scenarios (more details below). The BGLR package (Paulino and de los Campos (2021)) was used to fit a GBLUP (for predictig individuals) and an BayesB (for estimating marker effects), depending on each phase of the breeding program and scenarios were being used.
+iv. Genomic model. For the genomic model, the last three year of data (genotypes and phenotypes) were used to calibrate a model and the deploymet was used to select the best individuals and to create the mating plan in some scenarios (more details below). The BGLR package (Perez-Rodriguez and de los Campos (2021)) was used to fit a GBLUP (for predictig individuals) and an BayesB (for estimating marker effects), depending on each phase of the breeding program and scenarios were being used.
 
 For more details on the simulation parameters, please, see Peixoto et al. (2024).
 
@@ -30,7 +30,7 @@ The second step was to implement the different scenarios for comparision. They w
 
 **GS**: A breeding program were the 40 crosses from each heterotic pools were randomly assigned after a selection of top indivduals (truncated genomic selection followed by randomly generation of a mating plan). 
 
-**MPV**: Mid-parental value scenario. The individuals candidates to crosses were coming from the double haploid population and all possible combinations were estimated for each heterotic group. For such, we used SimpleMating (Peixoto et al. 2024) to predict the mid-parental values (UC) of each cross, as follows
+**MPV**: Mid-parental value scenario. The individuals candidates to crosses were coming from the double haploid population and all possible combinations were estimated for each heterotic group. For such, we used SimpleMating (Peixoto et al. 2024) to predict the mid-parental values (MPV) of each cross, as follows
 
 
 $$
@@ -57,7 +57,7 @@ where:
 
 The optimization of this scenario was made using the SimpleMating algorithm and a restriction on inbreeding was made by setting it to 0 and the maximum numer of contributions was set 3. Then, a mating plan was generated for each heterotic group.
 
-**OpCS**: Optimal contribution selection. In this scenario, individuals candidates to crosses were coming from the first clonal phase and contributions were imposed for generating a crossing plan. The restriction were made in both, maximizing the genetic gain and restricting inbreeding (40% angle) using AlphaMate software (Gorjanc et al. 2028). A total of 40 crosses were also generated at the begging of each cycle for each heterotic group. The optimization was performed in the EBV values.
+**OpCS**: Optimal contribution selection. In this scenario, individuals candidates to crosses were coming from the first clonal phase and contributions were imposed for generating a crossing plan. The restriction were made in both, maximizing the genetic gain and restricting inbreeding (40% angle) using AlphaMate software (Gorjanc et al. 2028). A total of 40 crosses were also generated at the begging of each cycle for each heterotic group. The optimization was performed in the EBV values predicted from the model.
 
 
 ##### Set two
@@ -67,7 +67,7 @@ The second set of simulations focused on a clonal breeding program. After recomb
 i. Base genome. The base genome was created following the generic settings in the *species* argument. A total of 300 QTLs per chromosome (12 pairs) was simulated. 
 ii. Trait.  A trait with 0.5 of heritability was simulated. Additive and domiance effects were assigned to the trait (being varDD and ddMean 0.2 and 0.5, respectively). 
 iii. A clonal breeding program was then simulated and a 15 years of burn-in was used to generate a commom starting point for all scenarios. From here, all scenarios took place. 
-iv. Genomic model. For the genomic model, the last four year of data (genotypes and phenotypes) were used to calibrate a model and the deploymet was used to select the best individuals and to create the mating plan in some scenarios (more details below). The BGLR package (Perez and de los Campos (2021)) was used to fit a GBLUP (for predictig individuals) and an BayesB (for estimating marker effects), depending on each phase of the breeding program and scenarios were being used.
+iv. Genomic model. For the genomic model, the last four year of data (genotypes and phenotypes) were used to calibrate a model and the deployment was used to select the best individuals and to create the mating plan in some scenarios (more details below). The BGLR package (Perez-Rodriguez and de los Campos (2021)) was used to fit a GBLUP (for predictig individuals) and an BayesB (for estimating marker effects), depending on each phase of the breeding program and scenarios were being used.
 
 Then, the scenarios below were implemented for comparision. They were:
 
@@ -93,7 +93,7 @@ where:
 The optimization of this scenario was made using the SimpleMating algorithm and a restriction on inbreeding was made by setting it to 0 and the maximum numer of contributions was set 3. Then, a mating plan was generated.
 
 
-**OCS**: The individuals candidates to crosses were coming from the first clonal phase and all possible combinations were estimated. We used SimpleMating (Peixoto et al. 2024) to predict genomic prediction of cross-performance of each cross (as above described), as follows:
+**OCS**: The individuals candidates to crosses were coming from the first clonal phase and all possible combinations were estimated. We used SimpleMating (Peixoto et al. 2024) to predict usefulness of each cross, as follows:
 
 $$
 **UC = GPCP + ihσ**
