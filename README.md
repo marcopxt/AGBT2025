@@ -9,7 +9,7 @@ Details on the simulations for the abstract with the title before mentioned pres
 
 
 ### Introduction
-The simulations were conducted using AlphaSimR (Gaynor et al. 2021). The mate allocation and restrictions to build mating plans in the scenarios was made using SimpleMating package (Peixoto et al. 2024) [link](https://github.com/Resende-Lab/SimpleMating)
+The simulations were conducted using AlphaSimR (Gaynor et al. 2021). The mate allocation and restrictions to build mating plans in the scenarios were made using SimpleMating package (Peixoto et al. 2024) [link](https://github.com/Resende-Lab/SimpleMating)
 
 <br>
 
@@ -73,7 +73,7 @@ Then, the scenarios below were implemented for comparision. They were:
 
 **GS**: A breeding program were the 80 crosses randomly assigned after a selection of top indivduals (truncated genomic selection followed by randomly generation of a mating plan). The genomic model here used targeted only additive effects.
 
-**GPCP**: genomic prediction of cross-performance scenario. The individuals candidates to crosses were coming from the first clonal phase and all possible combinations were estimated. We used SimpleMating (Peixoto et al. 2024) to predict genomic prediction of cross-performance of each cross, as follows:
+**GPCP**: genomic prediction of cross-performance scenario. The individuals candidates to crosses were coming from the first clonal phase and all possible combinations were estimated. We used SimpleMating to predict genomic prediction of cross-performance of each cross, as follows:
 
 
 
@@ -107,19 +107,31 @@ where:
 
 The optimization of this scenario was made using the SimpleMating algorithm and a restriction on inbreeding was made by setting it to 0 and the maximum numer of contributions was set 3. Then, a mating plan was generated for each heterotic group.
 
-**OpCS**: Optimal contribution selection. In this scenario, individuals candidates to crosses were coming from the first clonal phase and contributions were imposed for generating a crossing plan. The restriction were made in both, maximizing the genetic gain and restricting inbreeding (40% angle) using AlphaMate software (Gorjanc et al. 2028). A total of 80 crosses were also generated at the begging of each cycle.
+**OpCS**: Optimal contribution selection. In this scenario, individuals candidates to crosses were coming from the first clonal phase and contributions were imposed for generating a crossing plan. The restriction were made in both, maximizing the genetic gain and restricting inbreeding (40% angle) using AlphaMate software (Gorjanc et al. 2018). A total of 80 crosses were also generated at the begging of each cycle.
 
 
 ### Results
 
 
-![Optim](https://github.com/marcopxt/marcopxt.github.io/tree/master/assets/images/Mate_Allocation.png){:width="40%" align="right"}
+![Optim](Program.png){:width="40%" align="right"}
+Figure 1. Comparision between OCS and OpCS in 20 years of breeding.
 
+
+
+![Optim](Potato.png){:width="40%" align="right"}
+Figure 2. Comparision among the scenarios for the clonal breeding program through 20 cycles of selection.
 ***
 
 
 
+#### References
+Peixoto, M. A., Amadeu, R. R., Bhering, L. L., Ferrão, L. F. V., Munoz, P. R., & Resende Jr, M. F. (2025). SimpleMating: R‐package for prediction and optimization of breeding crosses using genomic selection. The Plant Genome, 18(1), e20533.
 
+Gorjanc, G., & Hickey, J. M. (2018). AlphaMate: a program for optimizing selection, maintenance of diversity and mate allocation in breeding programs. Bioinformatics, 34(19), 3408-3411.
+
+Gaynor, R. C., Gorjanc, G., & Hickey, J. M. (2021). AlphaSimR: an R package for breeding program simulations. G3, 11(2), jkaa017.
+
+Pérez-Rodríguez, P., & de Los Campos, G. (2022). Multitrait Bayesian shrinkage and variable selection models with the BGLR-R package. Genetics, 222(1), iyac112.
 
 
 
