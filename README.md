@@ -118,7 +118,7 @@ Figure 1. Comparision between OCS and OpCS in 20 years of breeding.
 
 
 
-![Optim](Potato.png){:width="40%" align="right"}
+![Optim](potato.png){:width="40%" align="right"}
 Figure 2. Comparision among the scenarios for the clonal breeding program through 20 cycles of selection.
 ***
 
