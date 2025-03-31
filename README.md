@@ -113,13 +113,13 @@ The optimization of this scenario was made using the SimpleMating algorithm and 
 ### Results
 
 
-![Optim](Program.png){:width="40%" align="right"}
-Figure 1. Comparision between OCS and OpCS in 20 years of breeding.
+![Optim](Program.png)
+**Figure 1.** Comparision between OCS and OpCS in 20 years of breeding.
 
 
 
-![Optim](potato.png){:width="40%" align="right"}
-Figure 2. Comparision among the scenarios for the clonal breeding program through 20 cycles of selection.
+![Optim](potato.png)
+**Figure 2.** Comparision among the scenarios for the clonal breeding program through 20 cycles of selection.
 ***
 
 
